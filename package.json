@@ -1,0 +1,14 @@
+{
+  "name": "dating-app",
+  "version": "1.0.0",
+  "description": "This project based on dating app user can find partner easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdul Kadir Khan",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.10"
+  }
+}
