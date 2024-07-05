@@ -9,7 +9,7 @@ const init = async () => {
 
     server.route({
         method: 'GET',
-        path: '/',
+        path: '/gettingData',
         handler: (request, h) => {
             return 'Hello, Hapi.js!';
         }
