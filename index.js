@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 const init = async () => {
   // Create a Hapi server instance
   const server = Hapi.server({
-    port: 3000,
+    port: 3001,
     host: 'localhost'
   });
 
@@ -25,20 +25,28 @@ const init = async () => {
     // Example collection and data
     const collection = database.collection('myCollection'); // Replace 'myCollection' with your collection name
 
-    // Example route to insert a document
     server.route({
-      method: 'GET',
-      path: '/insert',
-      handler: async (request, h) => {
-        try {
-          const result = await collection.insertOne({ name: "Alice", age: 25, city: "New York" });
-          return `Document inserted with ID: ${result.insertedId}`;
-        } catch (error) {
-          console.error(error);
-          return h.response('Failed to insert document').code(500);
-        }
+      method:'POST',
+      path:'/insert',
+      handler: async (request,h) => {
+        console.log('request...data coming from frontend',request);
       }
     });
+
+    // Example route to insert a document
+    // server.route({
+    //   method: 'GET',
+    //   path: '/insert',
+    //   handler: async (request, h) => {
+    //     try {
+    //       const result = await collection.insertOne({ name: "Alice", age: 25, city: "New York" });
+    //       return `Document inserted with ID: ${result.insertedId}`;
+    //     } catch (error) {
+    //       console.error(error);
+    //       return h.response('Failed to insert document').code(500);
+    //     }
+    //   }
+    // });
 
     // Example route to retrieve documents
     server.route({
