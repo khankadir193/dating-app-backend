@@ -29,7 +29,8 @@ const init = async () => {
       method:'POST',
       path:'/insert',
       handler: async (request,h) => {
-        console.log('request...data coming from frontend',request);
+        console.log('request...data coming from frontend',request.payload);
+        return h.response({message:'data has been received successfully'}).code(200);
       }
     });
 
