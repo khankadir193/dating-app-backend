@@ -5,7 +5,14 @@ const init = async () => {
   // Create a Hapi server instance
   const server = Hapi.server({
     port: 3001,
-    host: 'localhost'
+    host: 'localhost',
+    routes: {
+      cors: {
+        origin: ['*'], // Allow all origins
+        headers: ['Accept', 'Content-Type', 'Authorization'],
+        additionalHeaders: ['X-Requested-With']
+      }
+    }
   });
 
   // Connection URI for MongoDB Atlas
