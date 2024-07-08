@@ -36,8 +36,9 @@ const init = async () => {
       method:'POST',
       path:'/insert',
       handler: async (request,h) => {
+        const result = await collection.insertOne(request.payload);
         console.log('request...data coming from frontend',request.payload);
-        return h.response({message:'data has been received successfully'}).code(200);
+        return h.response(result).code(200);
       }
     });
 
