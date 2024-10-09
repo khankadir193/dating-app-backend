@@ -16,7 +16,7 @@ const init = async () => {
   });
 
   // Connection URI for MongoDB Atlas
-  const uri = "mongodb+srv://abdulkadirk059:EKnPnmbDcde0lm0i@cluster0.1kvydlx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  const uri = "mongodb+srv://abdulkadirk059:EKnPnmbDcde0lm0i@dateapp-cluster.cyunp.mongodb.net/?retryWrites=true&w=majority&appName=dateApp-cluster";
 
   // Create a MongoClient
   const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
